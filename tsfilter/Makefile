@@ -73,3 +73,4 @@ clean:
 # References:
 # http://www.cs.colby.edu/maxwell/courses/tutorials/maketutor/
 # https://www.cs.swarthmore.edu/~newhall/unixhelp/howto_makefiles.html
+# https://stackoverflow.com/questions/1814270/gcc-g-option-to-place-all-object-files-into-separate-directory
