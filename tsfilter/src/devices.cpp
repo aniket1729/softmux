@@ -223,7 +223,8 @@ MulticastOutDevice::MulticastOutDevice(int af_type, int dest_port, const char *d
 	
     memset((char *) &m_dest_addr, 0, sizeof(m_dest_addr));
     m_dest_addr.sin_family = m_af_type;
-    m_dest_addr.sin_addr.s_addr = htonl(INADDR_ANY);    //m_dest_addr.sin_addr.s_addr=inet_addr(dest_group);
+    //m_dest_addr.sin_addr.s_addr = htonl(INADDR_ANY);
+    m_dest_addr.sin_addr.s_addr=inet_addr(dest_group);
     m_dest_addr.sin_port = htons(dest_port);
 }
 
