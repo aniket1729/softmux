@@ -8,6 +8,20 @@
 #include <pthread.h>
 
 #define DIRECT_LOG(fmt, ...) printf("[DEBUG] %s(): "fmt"\n", __FUNCTION__, ##__VA_ARGS__);
+/*
+Example
+
+char* str = NULL;
+DIRECT_LOG("Only Text");
+DIRECT_LOG("Text with extra argument", 2018);
+DIRECT_LOG("Text with proper argument %d", 2018);
+str = malloc(sizeof(char)*10);
+strcpy(str, "Text copied");
+printf(str);
+DIRECT_LOG(str);
+DIRECT_LOG("Only Text again");
+
+*/
 
 #define LOG_INFO     1
 #define LOG_WARN     1
