@@ -1,6 +1,28 @@
 #ifndef COMMON_H
 #define COMMON_H
 
+#include <execinfo.h>
+#include <stdlib.h>
+
+#define BT_FUNC_PTR_COUNT 10
+#define BT_PRINT { \
+        int i, nFuncPtrs; \
+        void *btFuncPtrs[BT_FUNC_PTR_COUNT]; \
+        char **btFuncName; \
+        \
+        nFuncPtrs = backtrace(btFuncPtrs, BT_FUNC_PTR_COUNT); \
+        \
+        btFuncName = backtrace_symbols(btFuncPtrs, nFuncPtrs); \
+        if (btFuncName) { \
+            printf("Backtrace: \n"); \
+            for( i = 0; i < nFuncPtrs; i++) { \
+                printf("\t %s\n", btFuncName[i]); \
+            } \
+            printf("\n"); \
+            free(btFuncName); \
+        } \
+    }
+
 #if 1    //CPP
 #define ALLOC_POINTER_ARGS(var, TYPE, args...)  var = new TYPE(args)
 
