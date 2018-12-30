@@ -7,6 +7,8 @@
 #include <stdio.h>
 #include <pthread.h>
 
+#define DIRECT_LOG(fmt, ...) printf("[DEBUG] %s(): "fmt"\n", __FUNCTION__, ##__VA_ARGS__);
+
 #define LOG_INFO     1
 #define LOG_WARN     1
 #define LOG_ERROR    1
