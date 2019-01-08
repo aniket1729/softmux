@@ -7,7 +7,7 @@
 #include <stdio.h>
 #include <pthread.h>
 
-#define DIRECT_LOG(fmt, ...) printf("[DEBUG] %s(): "fmt"\n", __FUNCTION__, ##__VA_ARGS__);
+#define DIRECT_LOG(fmt, ...) printf("[DEBUG] [PID=%d] [TID=%p] %s(): "fmt"\n", getpid(), pthread_self(), __FUNCTION__, ##__VA_ARGS__);
 /*
 Example
 
